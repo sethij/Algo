@@ -12,30 +12,39 @@ public class Solution {
 		for (int i = 0; i < n; i++) {
 			arr[i]= s.nextInt();
 		}
-		sort(arr,0);
-		s.close();
+		heapify(arr,0);
 		System.out.println(Arrays.toString(arr));
+		while (arr.length>0){
+			System.out.print(arr[0]+" ");
+			swap(arr, arr.length-1, 0);
+		arr = Arrays.copyOf(arr, arr.length-1);	
+		heapify(arr,0);
+		}
+		
+		s.close();
 
 	}
-
-	private static void sort(int[] arr,int pos) {
+	private static void swap(int[] arr, int x, int y){
+		int temp = arr[x];
+		arr[x]=arr[y];
+		arr[y]=temp;
+	}
+	private static void heapify(int[] arr,int pos) {
 		int left = pos*2 +1;
 		int right = pos*2 +2;
 		if(left >=arr.length)
 			return;
-		sort(arr, left);
+		heapify(arr, left);
 		if(arr[left]>arr[pos]){
-			int temp =arr[left];
-			arr[left] = arr[pos];
-			arr[pos] = temp;
+			swap(arr, left, pos);
+			heapify(arr, left);
 		}
 		if(right>=arr.length)
 				return;
-		sort(arr, right);
+		heapify(arr, right);
 		if(arr[right]>arr[pos]){
-			int temp =arr[right];
-			arr[right] = arr[pos];
-			arr[pos] = temp;
+			swap(arr, right, pos);
+			heapify(arr, right);
 		}
 	}
 

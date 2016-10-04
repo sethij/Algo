@@ -46,7 +46,7 @@ public class Nqueens {
 
 		int left = j - 1;
 		int right = j + 1;
-		int q = i;
+		//int q = i;
 		boolean flagLeft = false, flagRight = false;
 		while (i > 0 && j < arr.length) {
 			// System.out.println("entering for queen diagonal checking "+i);

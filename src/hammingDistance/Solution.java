@@ -1,9 +1,5 @@
 package hammingDistance;
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
 
@@ -12,7 +8,7 @@ public class Solution {
         int N, M, i;
          int l,r,l1,r1,l2,r2;
         String query = new String(); 
-        String splitted_query[];
+        //String splitted_query[];
         ArrayList<Object> output  = new ArrayList<Object>();
         Scanner sc = new Scanner(System.in);
         // length of string
@@ -105,6 +101,6 @@ public class Solution {
         for(Object o: output){
             System.out.println(o.toString());           
         }
-            
+        sc.close();    
     }
 }

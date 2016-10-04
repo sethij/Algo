@@ -22,7 +22,7 @@ public class Solution {
         for(int i=0;i<m;i++){
             l[i]= s.nextInt();
         }
-        
+        s.close();
          int end;
         for(int i=0;i<m;i++){
             end = l[i];
