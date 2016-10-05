@@ -1,10 +1,11 @@
+//Quick sort using last element as last
 package quickSort;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Solution {
-
+	static int i=0;
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
@@ -13,6 +14,7 @@ public class Solution {
 			arr[i]= s.nextInt();
 		}
 		s.close();
+		System.out.println(Arrays.toString(arr));
 		sort(arr,n-1);
 		System.out.println(Arrays.toString(arr));
 
@@ -21,24 +23,36 @@ public class Solution {
 	private static void sort(int[] arr, int pivot) {
 		//for(int i = pivot;i<0;i++)
 		int low = 0;
-		int high = pivot-1;
-		partition(arr, low,high,pivot);
+		int high = pivot;
+		partition(arr, low,high);
 	}
 
-	private static void partition(int[] arr, int low, int high, int pivot) {
+	private static void partition(int[] arr, int lowOri, int highOri) {
+		int low = lowOri;
+		int pivot = highOri;
+		int high = highOri-1; 
+		
+		if(low>=high)
+			return;
 		
 		while(low<high){
-			while(arr[low]<arr[pivot])
+			
+			while(arr[low]<arr[pivot] && low<high)
 				low++;
-			while(arr[high]>arr[pivot])
+			while(arr[high]>arr[pivot] && low<high)
 				high--;
-			swap(arr, low,high);	
+			swap(arr, low,high);
+
 		}
-			swap(arr, low, pivot);
-		//pivot = low;
-		if(low>0){
-			partition(arr, 0, pivot-1, low-1);
-		}
+		
+		//swap pivot element with the low or high if pivot is smaller... 
+		if(arr[low]>arr[pivot])
+			swap(arr,low,pivot);
+		//System.out.println("After iteration " +(i++) +" "+Arrays.toString(arr));
+	
+		partition(arr, lowOri, low-1);
+		partition(arr, high+1, pivot);
+			
 		
 	}
 	
