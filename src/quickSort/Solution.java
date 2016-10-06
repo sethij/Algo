@@ -32,7 +32,7 @@ public class Solution {
 		int pivot = highOri;
 		int high = highOri-1; 
 		
-		if(low>=high)
+		if(low>=high)//*** other solution step 1. if(low>high)
 			return;
 		
 		while(low<high){
@@ -48,9 +48,11 @@ public class Solution {
 		//swap pivot element with the low or high if pivot is smaller... 
 		if(arr[low]>arr[pivot])
 			swap(arr,low,pivot);
+		else //*** other solution step 2. remove else.
+			low=pivot;
 		//System.out.println("After iteration " +(i++) +" "+Arrays.toString(arr));
 	
-		partition(arr, lowOri, low-1);
+		partition(arr, lowOri, low-1);//*** other solution step 3. partition(arr, lowOri, low);  
 		partition(arr, high+1, pivot);
 			
 		
