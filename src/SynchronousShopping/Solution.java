@@ -10,7 +10,7 @@ public class Solution {
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();//no. of shopping center
 		int m = s.nextInt();//no.of roads
-		int k = s.nextInt();//types of fishes
+		int k = s.nextInt();//types of fishes at each center
 		HashMap<Integer, ArrayList<Integer>> t  = new HashMap<>();// types fishes sold at shopping center
 		for(int i = 0;i<n;i++){
 			ArrayList<Integer> ar = new ArrayList<>();
