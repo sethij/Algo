@@ -1,4 +1,4 @@
-package breadthFirst;
+package searchAndSorts.breadthFirst;
 
 import java.util.ArrayList;
 import java.util.Scanner;

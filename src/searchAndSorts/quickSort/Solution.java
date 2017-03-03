@@ -1,5 +1,5 @@
 //Quick sort using last element as last
-package quickSort;
+package searchAndSorts.quickSort;
 
 import java.util.Arrays;
 import java.util.Scanner;

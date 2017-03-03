@@ -1,4 +1,4 @@
-package bubbleSort;
+package searchAndSorts.bubbleSort;
 
 import java.util.Arrays;
 import java.util.Scanner;
